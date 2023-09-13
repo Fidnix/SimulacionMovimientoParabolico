@@ -3,12 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>Simulador de trayectoria</title>
 </head>
 <body>
-    <canvas width="500" height="500" id="lienzo"></canvas>
+    <!-- Barra lateral -->
+    <aside class="sidebar">
+        <section class="sidebar__section sidebar__section sidebar__section--btns">
+            <button id = 'flipBtn' class = 'sidebar__btn play'>
+                <img src="./assets/play-solid.svg" alt="" srcset="" class = 'playImg'>
+                <img src="./assets/pause-solid.svg" alt="" srcset="" class = 'pauseImg'>
+            </button>
+            <button id="resetBtn" class = 'sidebar__btn'>
+                <img src="./assets/repeat-solid.svg" alt="">
+            </button>
+        </section>
+        <section class="sidebar__section sidebar__section--time">
+            <label for="timeRange" >Tiempo: </label>
+            <div>
+                <input type="number" name="Tiempo" id="timeRange" class = 'timeText' value="0" step = '0.10'>
+                <span class = 'timeText'>s</span>
+            </div>
+        </section>
+        <section class="sidebar__section">
+            <label for="velXRange">Velocidad en x</label>
+            <div>
+                <span id="v0x__display">0 m/s</span>
+                <input type="range" name="VelX" id="velXRange" value = "60" min="0" max="100">
+            </div>
+        </section>
+        <section class="sidebar__section">
+            <label for="velYRange">Velocidad en y</label>
+            <div>
+                <span id="v0y__display">0 m/s</span>
+                <input type="range" name="VelY" id="velYRange" value = "60" min="0" max="100">
+            </div>
+        </section>
 
-    <script src="js/draws.js"></script>
-    <script src="js/main_canvas_code.js"></script>
+    </aside>
+
+    <!-- Canvas -->
+    <div id="canvas__cont">
+        <canvas width="500" height="500" id="canvas"></canvas>
+    </div>
+
+    <script src="js/vector.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/engine.js"></script>
+    <script src="js/render.js"></script>
+    <script src="js/point.js"></script>
+    <script src="js/timer.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    box-sizing: border-box;
+}
+
+input[type='number']::-webkit-inner-spin-button{
+    display: none;
+    margin: 0;
+    --webkit-appearance: none;
+}
+
+input[type='number']{
+    -moz-appearance: textfield;
+}
+
+#timeRange{
+    width: 3em;
+    outline: none;
+    background-color: transparent;
+    border: 0;
+    text-align: center;
+    transition-property: transform;
+    transition-duration: .2s;
+}
+
+#timeRange:focus{
+    transform: scale(1.1);
+}
+
+.timeText{
+    font-size: 1.3em;
+    /* background: -webkit-linear-gradient( rgb(241, 12, 111), rgb(176, 236, 240));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+}
+
+.sidebar{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 300px;
+    box-sizing: border-box;
+    background-color: #2D334A;
+    padding: 30px;
+}
+
+.sidebar__section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    background-color: #282e45;
+    margin-bottom:10px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.sidebar__section label{
+    width: 100%;
+    font-size: 1em;
+    text-align: center;
+    background-color: #1c2238;
+    padding: 5px 0;
+}
+
+.sidebar__section--btns{
+    padding: 10px 30px;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.sidebar__btn{
+    border: 0 solid transparent;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition-property: background-color;
+    transition-duration: .2s;
+}
+
+.sidebar__btn:hover{
+    background-color: rgb(179, 179, 179);
+}
+
+
+.sidebar__btn > img{
+    width: 30px;
+    height: 30px;
+}
+
+.play .playImg {
+    display: block;
+}
+.play .pauseImg {
+    display: none;
+}
+
+.pause .playImg {
+    display: none;
+}
+.pause .pauseImg {
+    display: block;
+}
+
+#canvas__cont{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 300px;
+    right: 0;
+}
